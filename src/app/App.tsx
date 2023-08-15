@@ -11,7 +11,6 @@ function App() {
     <div className={classNames("app", {}, [theme])}>
       <Navbar />
       <AppRouter />
-      test branchkkk
     </div>
   );
 }

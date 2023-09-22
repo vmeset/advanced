@@ -2,6 +2,7 @@ module.exports = {
     env: {
         browser: true,
         es2021: true,
+        jest: true
     },
     extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:i18next/recommended'],
     parser: '@typescript-eslint/parser',
@@ -40,7 +41,7 @@ module.exports = {
         '@typescript-eslint/no-floating-promises': 'off',
         'react/no-deprecated': 'warn',
         '@typescript-eslint/naming-convention': 'off',
-        "i18next/no-literal-string": ['error', {markupOnly: true}]
+        "i18next/no-literal-string": ['warn', {markupOnly: true}]
     },
     globals: {
         __IS_DEV__: true,

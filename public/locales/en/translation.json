@@ -1,5 +1,7 @@
 {
     "Главная": "Main",
     "О нас": "About",
-    "язык": "english"
+    "язык": "english",
+    "Что-то пошло не так...": "Something went wrong..",
+    "Перезагрузить страницу": "Reload page"
 }

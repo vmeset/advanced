@@ -40,6 +40,7 @@ module.exports = {
         '@typescript-eslint/no-misused-promises': 'off',
         '@typescript-eslint/no-floating-promises': 'off',
         'react/no-deprecated': 'warn',
+        "@typescript-eslint/consistent-type-imports": "off",
         '@typescript-eslint/naming-convention': 'off',
         "i18next/no-literal-string": ['warn', {markupOnly: true}]
     },

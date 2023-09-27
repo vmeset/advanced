@@ -20,7 +20,7 @@ export const Sidebar = ({ className }: SidebarProps): JSX.Element => {
         className
       ])}
     >
-      <Button onClick={toggleCollapsed}>toggle</Button>
+      <Button onClick={toggleCollapsed}>{collapsed ? '=>' : '<='}</Button>
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher className={cls.lang} />

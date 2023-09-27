@@ -1,5 +1,7 @@
 {
-    "перевести": "translate",
-    "страница о нас": "about page",
-    "язык": "english"
+    "Главная": "Main",
+    "О нас": "About",
+    "язык": "english",
+    "Что-то пошло не так...": "Something went wrong..",
+    "Перезагрузить страницу": "Reload page"
 }

@@ -10,7 +10,7 @@ function App (): JSX.Element {
   const { theme } = useTheme()
 
   useEffect(() => {
-    if (Math.random() < 0.9) {
+    if (Math.random() < 0.5) {
       throw new Error()
     }
   }, [])

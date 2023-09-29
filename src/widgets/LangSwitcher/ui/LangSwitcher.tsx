@@ -8,7 +8,8 @@ interface LangSwitcherProps {
 }
 
 export const LangSwitcher = ({ className }: LangSwitcherProps): JSX.Element => {
-  const { t, i18n } = useTranslation()
+  const { t, i18n } = useTranslation('translation')
+
   const toggleLang = async () => {
     await i18next.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
   }

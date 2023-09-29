@@ -19,6 +19,7 @@ export const Button = ({
 }: ButtonProps): JSX.Element => {
   return (
     <button
+      data-testid="testBtn"
       className={classNames(cls.button, {}, [className, cls[theme]])}
       {...otherProps}
     >

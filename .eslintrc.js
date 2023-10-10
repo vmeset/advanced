@@ -16,9 +16,6 @@ module.exports = {
     },
     ecmaVersion: 'latest',
     sourceType: 'module',
-    parser: '@typescript-eslint/parser',
-    project: './tsconfig.json',
-    // tsconfigRootDir: __dirname,
   },
   plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
@@ -54,7 +51,7 @@ module.exports = {
       { markupOnly: true, ignoreAttribute: ['data-testid'] },
     ],
     'space-before-function-paren': 'off',
-    '@typescript-eslint/space-before-function-paren': 'error',
+    '@typescript-eslint/space-before-function-paren': 'off',
     '@typescript-eslint/comma-dangle': ['off', 'always'],
   },
   globals: {

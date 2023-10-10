@@ -6,11 +6,11 @@ import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'
 import { Suspense, useEffect } from 'react'
 
-function App (): JSX.Element {
+function App(): JSX.Element {
   const { theme } = useTheme()
 
   useEffect(() => {
-    if (Math.random() < 0.5) {
+    if (Math.random() < 0.1) {
       throw new Error()
     }
   }, [])

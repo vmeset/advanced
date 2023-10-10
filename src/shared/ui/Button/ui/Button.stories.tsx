@@ -1,8 +1,9 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-// import { Theme } from 'app/providers/ThemeProvider'
+import { Theme } from 'app/providers/ThemeProvider'
 import { Button, ButtonTheme } from './Button'
+import { ThemeDecorator } from '../../../config/storybook/themeDecorator/ThemeDecorator'
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {
@@ -26,15 +27,15 @@ Clear.args = {
   theme: ButtonTheme.CLEAR,
 }
 
-export const Outline = Template.bind({})
-Outline.args = {
-  children: 'Text',
-  theme: ButtonTheme.OUTLINE,
-}
-
 export const OutlineDark = Template.bind({})
 OutlineDark.args = {
   children: 'Text',
   theme: ButtonTheme.OUTLINE,
 }
-// OutlineDark.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const OutlineLight = Template.bind({})
+OutlineLight.args = {
+  children: 'Text',
+  theme: ButtonTheme.OUTLINE,
+}
+OutlineLight.decorators = [ThemeDecorator(Theme.LIGHT)]

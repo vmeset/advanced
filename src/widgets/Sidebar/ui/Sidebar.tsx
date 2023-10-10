@@ -16,11 +16,14 @@ export const Sidebar = ({ className }: SidebarProps): JSX.Element => {
   }
   return (
     <div
+      data-testid="sidebar"
       className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
-        className
+        className,
       ])}
     >
-      <Button onClick={toggleCollapsed}>{collapsed ? '=>' : '<='}</Button>
+      <Button data-testid="toggleBtn" onClick={toggleCollapsed}>
+        {collapsed ? '=>' : '<='}
+      </Button>
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher className={cls.lang} />

@@ -4,6 +4,7 @@ import { type ButtonHTMLAttributes } from 'react'
 
 export enum ButtonTheme {
   CLEAR = 'clear',
+  OUTLINE = 'outline',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -19,6 +20,7 @@ export const Button = ({
 }: ButtonProps): JSX.Element => {
   return (
     <button
+      data-testid="testBtn"
       className={classNames(cls.button, {}, [className, cls[theme]])}
       {...otherProps}
     >

@@ -16,7 +16,7 @@ export default {
   },
 } as ComponentMeta<typeof Main>
 
-const Template: ComponentStory<typeof Main> = (args) => (
+const Template: ComponentStory<typeof Main> = (args: object) => (
   <Main {...(args ?? {})} />
 )
 

@@ -14,8 +14,9 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "npx loki test",
     "test:ui:ok": "npx loki approve",
+    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "storybook:build": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook -c ./config/storybook"
+    "storybook:build": "build-storybook -c ./config/storybook"
   },
   "keywords": [],
   "author": "",
@@ -48,6 +49,7 @@
     "@typescript-eslint/eslint-plugin": "^6.6.0",
     "babel-loader": "^8.2.3",
     "babel-plugin-i18next-extract": "^0.8.3",
+    "cross-env": "^7.0.3",
     "eslint": "^8.48.0",
     "eslint-config-standard-with-typescript": "^39.0.0",
     "eslint-plugin-i18next": "^5.1.2",

@@ -14,7 +14,7 @@ export default {
   },
 } as ComponentMeta<typeof PageLoader>
 
-const Template: ComponentStory<typeof PageLoader> = (args) => (
+const Template: ComponentStory<typeof PageLoader> = (args: object) => (
   <PageLoader {...(args ?? {})} />
 )
 

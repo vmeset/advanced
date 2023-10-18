@@ -1,6 +1,11 @@
 @keyframes ldio-oca88zja7i9 {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 .ldio-oca88zja7i9 div {
@@ -17,13 +22,13 @@
 
 .ldio-oca88zja7i9 div:nth-child(1) {
   transform: rotate(0deg);
-  animation-delay: -0.9166666666666666s;
+  animation-delay: -0.9167s;
   background: #fe718d;
 }
 
 .ldio-oca88zja7i9 div:nth-child(2) {
   transform: rotate(30deg);
-  animation-delay: -0.8333333333333334s;
+  animation-delay: -0.8333s;
   background: #fe718d;
 }
 
@@ -35,13 +40,13 @@
 
 .ldio-oca88zja7i9 div:nth-child(4) {
   transform: rotate(90deg);
-  animation-delay: -0.6666666666666666s;
+  animation-delay: -0.6666s;
   background: #fe718d;
 }
 
 .ldio-oca88zja7i9 div:nth-child(5) {
   transform: rotate(120deg);
-  animation-delay: -0.5833333333333334s;
+  animation-delay: -0.5833s;
   background: #fe718d;
 }
 
@@ -53,13 +58,13 @@
 
 .ldio-oca88zja7i9 div:nth-child(7) {
   transform: rotate(180deg);
-  animation-delay: -0.4166666666666667s;
+  animation-delay: -0.4166s;
   background: #fe718d;
 }
 
 .ldio-oca88zja7i9 div:nth-child(8) {
   transform: rotate(210deg);
-  animation-delay: -0.3333333333333333s;
+  animation-delay: -0.3333s;
   background: #fe718d;
 }
 
@@ -71,13 +76,13 @@
 
 .ldio-oca88zja7i9 div:nth-child(10) {
   transform: rotate(270deg);
-  animation-delay: -0.16666666666666666s;
+  animation-delay: -0.1666s;
   background: #fe718d;
 }
 
 .ldio-oca88zja7i9 div:nth-child(11) {
   transform: rotate(300deg);
-  animation-delay: -0.08333333333333333s;
+  animation-delay: -0.0833s;
   background: #fe718d;
 }
 
@@ -102,5 +107,5 @@
   transform: translateZ(0) scale(1);
   backface-visibility: hidden;
   transform-origin: 0 0; /* see note above */
+  box-sizing: content-box;
 }
-.ldio-oca88zja7i9 div { box-sizing: content-box; }

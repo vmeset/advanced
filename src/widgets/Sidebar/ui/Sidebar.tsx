@@ -1,9 +1,10 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Sidebar.module.scss'
 import { useState } from 'react'
-import { Button } from 'shared/ui/Button'
+import { Button, ButtonTheme } from 'shared/ui/Button'
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
 import { LangSwitcher } from 'widgets/LangSwitcher'
+import { ButtonSize } from '../../../shared/ui/Button/ui/Button'
 
 interface SidebarProps {
   className?: string
@@ -21,10 +22,22 @@ export const Sidebar = ({ className }: SidebarProps): JSX.Element => {
         className,
       ])}
     >
-      <Button data-testid="toggleBtn" onClick={toggleCollapsed}>
+      <Button
+        data-testid="toggleBtn"
+        onClick={toggleCollapsed}
+        className={classNames(cls.toggleBtn)}
+        theme={ButtonTheme.BACKGROUND}
+        size={ButtonSize.XL}
+      >
         {collapsed ? '=>' : '<='}
       </Button>
-      <div className={cls.switchers}>
+      <div
+        className={classNames(
+          cls.switchers,
+          { [cls.collapsed]: collapsed },
+          []
+        )}
+      >
         <ThemeSwitcher />
         <LangSwitcher className={cls.lang} />
       </div>

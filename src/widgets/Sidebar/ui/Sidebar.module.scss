@@ -4,7 +4,12 @@
   background: var(--inverted-bg-color);
   position: relative;
   transition: width 0.3s;
-  padding-inline: 10px;
+
+  .toggleBtn {
+    position: absolute;
+    right: -40px;
+    bottom: 25px;
+  }
 
   .switchers {
     position: absolute;
@@ -21,4 +26,6 @@
 
 .collapsed {
   width: var(--sidebar-width-collapsed);
+  display: flex;
+  flex-direction: column;
 }

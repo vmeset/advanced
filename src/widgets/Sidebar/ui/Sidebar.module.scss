@@ -26,6 +26,12 @@
 
 .collapsed {
   width: var(--sidebar-width-collapsed);
-  display: flex;
-  flex-direction: column;
+
+  .switchers {
+    flex-direction: column;
+
+    .lang {
+      margin-left: 0;
+    }
+  }
 }

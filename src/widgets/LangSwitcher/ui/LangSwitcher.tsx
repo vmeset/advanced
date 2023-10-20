@@ -5,9 +5,13 @@ import { Button, ButtonTheme } from 'shared/ui/Button'
 
 interface LangSwitcherProps {
   className?: string
+  short?: boolean
 }
 
-export const LangSwitcher = ({ className }: LangSwitcherProps): JSX.Element => {
+export const LangSwitcher = ({
+  className,
+  short,
+}: LangSwitcherProps): JSX.Element => {
   const { t, i18n } = useTranslation('translation')
 
   const toggleLang = async () => {
@@ -19,7 +23,7 @@ export const LangSwitcher = ({ className }: LangSwitcherProps): JSX.Element => {
       className={classNames('', {}, [className])}
       theme={ButtonTheme.CLEAR}
     >
-      {t('язык')}
+      {short ? t('короткая версия') : t('язык')}
     </Button>
   )
 }

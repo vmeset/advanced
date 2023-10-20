@@ -29,7 +29,7 @@ export const Sidebar = ({ className }: SidebarProps): JSX.Element => {
         theme={ButtonTheme.BACKGROUND}
         size={ButtonSize.XL}
       >
-        {collapsed ? '=>' : '<='}
+        {collapsed ? '>' : '<'}
       </Button>
       <div
         className={classNames(
@@ -39,7 +39,7 @@ export const Sidebar = ({ className }: SidebarProps): JSX.Element => {
         )}
       >
         <ThemeSwitcher />
-        <LangSwitcher className={cls.lang} />
+        <LangSwitcher className={cls.lang} short={collapsed} />
       </div>
     </div>
   )

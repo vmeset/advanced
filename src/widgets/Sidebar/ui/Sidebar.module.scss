@@ -18,7 +18,7 @@
     flex-direction: column;
     font: var(--font-m);
 
-    .link {
+    .item {
       display: flex;
       align-items: center;
       gap: 20px;
@@ -48,6 +48,12 @@
     .lang {
       margin-left: 0;
     }
+  }
+
+  .link {
+    opacity: 0;
+    transition: 0.2s opacity;
+    width: 0;
   }
 }
 

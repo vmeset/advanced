@@ -54,6 +54,7 @@ module.exports = {
     '@typescript-eslint/space-before-function-paren': 'off',
     '@typescript-eslint/comma-dangle': ['off', 'always'],
     'react/display-name': 'warn',
+    'multiline-ternary': 'off',
   },
   globals: {
     __IS_DEV__: true,

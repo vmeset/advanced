@@ -5,6 +5,11 @@ import { Button, ButtonTheme } from 'shared/ui/Button'
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
 import { LangSwitcher } from 'widgets/LangSwitcher'
 import { ButtonSize } from '../../../shared/ui/Button/ui/Button'
+import { AppLink, AppLinkTheme } from '../../../shared/ui/AppLink/AppLink'
+import { RoutePath } from '../../../shared/config/routeConfig/routeConfig'
+import { useTranslation } from 'react-i18next'
+import HomeIcon from 'shared/assets/icons/main-page.svg'
+import AboutIcon from 'shared/assets/icons/about-page.svg'
 
 interface SidebarProps {
   className?: string
@@ -12,6 +17,7 @@ interface SidebarProps {
 
 export const Sidebar = ({ className }: SidebarProps): JSX.Element => {
   const [collapsed, setCollapsed] = useState(false)
+  const { t } = useTranslation('translation')
   const toggleCollapsed = () => {
     setCollapsed((prev) => !prev)
   }
@@ -31,10 +37,45 @@ export const Sidebar = ({ className }: SidebarProps): JSX.Element => {
       >
         {collapsed ? '>' : '<'}
       </Button>
+
+      <div className={cls.links}>
+        <AppLink
+          className={cls.link}
+          theme={AppLinkTheme.PRIMARY_INVERTED}
+          to={RoutePath.main}
+          // className={cls.firstLink}
+        >
+          {collapsed ? (
+            <HomeIcon className={cls.icon} />
+          ) : (
+            <>
+              <HomeIcon className={cls.icon} />
+              {t('Главная')}
+            </>
+          )}
+        </AppLink>
+        <AppLink
+          className={cls.link}
+          theme={AppLinkTheme.PRIMARY_INVERTED}
+          to={RoutePath.about}
+        >
+          {collapsed ? (
+            <AboutIcon className={cls.icon} />
+          ) : (
+            <>
+              <AboutIcon className={cls.icon} />
+              {t('О нас')}
+            </>
+          )}
+        </AppLink>
+      </div>
+
       <div
         className={classNames(
           cls.switchers,
-          { [cls.collapsed]: collapsed },
+          {
+            [cls.collapsed]: collapsed,
+          },
           []
         )}
       >

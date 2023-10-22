@@ -4,3 +4,5 @@ node_modules
 .vscode
 .gitignore
 /storybook-static
+.loki/report.html
+.loki/report.json

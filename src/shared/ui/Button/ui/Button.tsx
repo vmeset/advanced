@@ -10,7 +10,7 @@ export enum ButtonTheme {
 }
 
 export enum ButtonSize {
-  M = 'middle',
+  M = 'medium',
   L = 'large',
   XL = 'extra_large'
 }

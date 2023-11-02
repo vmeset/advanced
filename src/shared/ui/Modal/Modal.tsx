@@ -1,0 +1,65 @@
+import { ReactNode, useEffect, useRef, useState } from 'react'
+import cls from './Modal.module.scss'
+import { classNames } from 'shared/lib/classNames/classNames'
+
+interface ModalProps {
+  children?: ReactNode
+  className?: string
+  isOpen?: boolean
+  onClose?: () => void
+}
+
+const ANIMATION_DELAY = 200
+
+export const Modal = ({
+  children,
+  className,
+  isOpen,
+  onClose,
+}: ModalProps): JSX.Element => {
+  const [isClosing, setIsClosing] = useState(false)
+  const timerRef = useRef<ReturnType<typeof setTimeout>>()
+  const mods: Record<string, boolean> = {
+    [cls.opened]: isOpen,
+    [cls.isClosing]: isClosing,
+  }
+
+  const closeHandler = () => {
+    if (onClose) {
+      setIsClosing(true)
+      timerRef.current = setTimeout(() => {
+        onClose()
+        setIsClosing(false)
+      }, ANIMATION_DELAY)
+    }
+  }
+
+  const onContentClick = (e: React.MouseEvent) => {
+    e.stopPropagation()
+  }
+
+  const onEscKeyDown = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      closeHandler()
+    }
+  }
+
+  useEffect(() => {
+    if (isOpen) {
+      window.addEventListener('keydown', onEscKeyDown)
+    }
+    return () => {
+      clearTimeout(timerRef.current)
+    }
+  }, [isOpen])
+
+  return (
+    <div className={classNames(cls.modal, mods, [className])}>
+      <div className={cls.mask} onClick={closeHandler}>
+        <div className={cls.content} onClick={onContentClick}>
+          {children}
+        </div>
+      </div>
+    </div>
+  )
+}

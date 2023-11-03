@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useRef, useState } from 'react'
+import { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import cls from './Modal.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
 
@@ -24,7 +24,7 @@ export const Modal = ({
     [cls.isClosing]: isClosing,
   }
 
-  const closeHandler = () => {
+  const closeHandler = useCallback(() => {
     if (onClose) {
       setIsClosing(true)
       timerRef.current = setTimeout(() => {
@@ -32,17 +32,20 @@ export const Modal = ({
         setIsClosing(false)
       }, ANIMATION_DELAY)
     }
-  }
+  }, [onClose])
 
   const onContentClick = (e: React.MouseEvent) => {
     e.stopPropagation()
   }
 
-  const onEscKeyDown = (e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      closeHandler()
-    }
-  }
+  const onEscKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeHandler()
+      }
+    },
+    [closeHandler]
+  )
 
   useEffect(() => {
     if (isOpen) {
@@ -50,8 +53,9 @@ export const Modal = ({
     }
     return () => {
       clearTimeout(timerRef.current)
+      window.removeEventListener('keydown', onEscKeyDown)
     }
-  }, [isOpen])
+  }, [isOpen, onEscKeyDown])
 
   return (
     <div className={classNames(cls.modal, mods, [className])}>

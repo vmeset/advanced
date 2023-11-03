@@ -24,7 +24,7 @@ export const Modal = ({
     [cls.isClosing]: isClosing,
   }
 
-  const closeHandler = () => {
+  const closeHandler = useCallback(() => {
     if (onClose) {
       setIsClosing(true)
       timerRef.current = setTimeout(() => {
@@ -32,7 +32,7 @@ export const Modal = ({
         setIsClosing(false)
       }, ANIMATION_DELAY)
     }
-  }
+  }, [onClose])
 
   const onContentClick = (e: React.MouseEvent) => {
     e.stopPropagation()

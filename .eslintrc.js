@@ -8,6 +8,7 @@ module.exports = {
     'plugin:react/recommended',
     'standard-with-typescript',
     'plugin:i18next/recommended',
+    'plugin:react-hooks/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -55,6 +56,8 @@ module.exports = {
     '@typescript-eslint/comma-dangle': ['off', 'always'],
     'react/display-name': 'warn',
     'multiline-ternary': 'off',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
   },
   globals: {
     __IS_DEV__: true,

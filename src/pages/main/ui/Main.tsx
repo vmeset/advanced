@@ -19,14 +19,11 @@ function Main() {
             setIsOpen((prev) => !prev)
           }}
         >
-          call modal
+          {t('модалочка')}
         </button>
       </div>
       <Modal isOpen={isOpen} onClose={onClose}>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
-        exercitationem fugiat ratione voluptas vel dolorem voluptatibus quisquam
-        iure corporis laboriosam minus odit, commodi repudiandae temporibus est
-        modi possimus, labore harum.
+        {t('Lorem ipsum')}
       </Modal>
     </div>
   )

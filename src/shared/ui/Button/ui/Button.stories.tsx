@@ -2,7 +2,7 @@ import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { Theme } from 'app/providers/ThemeProvider'
-import { Button, ButtonTheme } from './Button'
+import { Button, ButtonSize, ButtonTheme } from './Button'
 import { ThemeDecorator } from '../../../config/storybook/themeDecorator/ThemeDecorator'
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
@@ -27,15 +27,58 @@ Clear.args = {
   theme: ButtonTheme.CLEAR,
 }
 
+export const ClearInverted = Template.bind({})
+ClearInverted.args = {
+  children: 'Text',
+  theme: ButtonTheme.CLEAR_INVERTED,
+}
+
+export const Outline = Template.bind({})
+Outline.args = {
+  children: 'Text',
+  theme: ButtonTheme.OUTLINE,
+}
+
 export const OutlineDark = Template.bind({})
 OutlineDark.args = {
   children: 'Text',
   theme: ButtonTheme.OUTLINE,
 }
+OutlineDark.decorators = [ThemeDecorator(Theme.DARK)]
 
-export const OutlineLight = Template.bind({})
-OutlineLight.args = {
+export const Background = Template.bind({})
+Background.args = {
   children: 'Text',
-  theme: ButtonTheme.OUTLINE,
+  theme: ButtonTheme.BACKGROUND,
 }
-OutlineLight.decorators = [ThemeDecorator(Theme.LIGHT)]
+
+export const BackgroundInverted = Template.bind({})
+BackgroundInverted.args = {
+  children: 'Text',
+  theme: ButtonTheme.BACKGROUND_INVERTED,
+}
+BackgroundInverted.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const MediumSize = Template.bind({})
+MediumSize.args = {
+  children: '>',
+  theme: ButtonTheme.BACKGROUND_INVERTED,
+  size: ButtonSize.M,
+}
+MediumSize.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const LargeSize = Template.bind({})
+LargeSize.args = {
+  children: '>',
+  theme: ButtonTheme.BACKGROUND_INVERTED,
+  size: ButtonSize.L,
+}
+LargeSize.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const ExtraLargeSize = Template.bind({})
+ExtraLargeSize.args = {
+  children: '>',
+  theme: ButtonTheme.BACKGROUND_INVERTED,
+  size: ButtonSize.XL,
+}
+ExtraLargeSize.decorators = [ThemeDecorator(Theme.DARK)]

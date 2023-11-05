@@ -1,8 +1,9 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Navbar.module.scss'
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { useTranslation } from 'react-i18next'
+import { Button, ButtonTheme } from '../../../shared/ui/Button'
+import { Modal } from '../../../shared/ui/Modal/Modal'
+import { useCallback, useState } from 'react'
 
 interface NavbarProps {
   className?: string
@@ -10,20 +11,22 @@ interface NavbarProps {
 
 export const Navbar = ({ className }: NavbarProps): JSX.Element => {
   const { t } = useTranslation('translation')
+  const [isAuthOpen, setIsAuthOpen] = useState(false)
+
+  const toggleModal = useCallback(() => {
+    setIsAuthOpen((prev) => !prev)
+  }, [])
+
   return (
     <div className={classNames(cls.navbar, {}, [className])}>
       <div className={cls.links}>
-        <AppLink
-          theme={AppLinkTheme.PRIMARY_INVERTED}
-          to={RoutePath.main}
-          className={cls.firstLink}
-        >
-          {t('Главная')}
-        </AppLink>
-        <AppLink theme={AppLinkTheme.PRIMARY_INVERTED} to={RoutePath.about}>
-          {t('О нас')}
-        </AppLink>
+        <Button theme={ButtonTheme.CLEAR} onClick={toggleModal}>
+          {t('Войти')}
+        </Button>
       </div>
+      <Modal isOpen={isAuthOpen} onClose={toggleModal}>
+        0777
+      </Modal>
     </div>
   )
 }

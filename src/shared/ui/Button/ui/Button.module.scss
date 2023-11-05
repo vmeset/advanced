@@ -5,17 +5,21 @@
   color: var(--inverted-primary-color);
   box-sizing: border-box;
   border: none;
+  padding: 6px 15px;
 }
 
-.clear {
-  padding: 0;
+.clear,
+.clear_inverted {
   border: none;
   background: none;
   outline: none;
 }
 
+.clear_inverted {
+  color: var(--primary-color);
+}
+
 .outline {
-  padding: 10px 15px;
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
   background: none;
@@ -26,23 +30,28 @@
 }
 
 .background_inverted {
-  background-color: var(--bg-color);
+  background-color: var(--inverted-bg-color);
+
+  // background-color: var(--bg-color);
 }
 
 .middle {
   width: var(--font-line-m);
   height: var(--font-line-m);
   font-size: var(--font-size-m);
+  padding: 0;
 }
 
 .large {
   width: var(--font-line-l);
   height: var(--font-line-l);
   font-size: var(--font-size-l);
+  padding: 0;
 }
 
 .extra_large {
   width: var(--font-line-xl);
   height: var(--font-line-xl);
   font-size: var(--font-size-xl);
+  padding: 0;
 }

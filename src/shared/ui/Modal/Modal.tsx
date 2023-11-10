@@ -2,7 +2,6 @@ import { ReactNode, useCallback, useEffect } from 'react'
 import cls from './Modal.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Portal } from '../Portal/Portal'
-import { useTheme } from '../../../app/providers/ThemeProvider'
 
 interface ModalProps {
   children?: ReactNode
@@ -17,10 +16,8 @@ export const Modal = ({
   isOpen,
   onClose,
 }: ModalProps): JSX.Element => {
-  const { theme } = useTheme()
   const mods: Record<string, boolean> = {
     [cls.opened]: isOpen,
-    [cls[theme]]: true,
   }
 
   const closeHandler = useCallback(() => {

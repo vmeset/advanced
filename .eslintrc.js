@@ -58,6 +58,7 @@ module.exports = {
     'multiline-ternary': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
+    '@typescript-eslint/indent': 'off',
   },
   globals: {
     __IS_DEV__: true,

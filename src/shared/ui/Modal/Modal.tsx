@@ -1,4 +1,4 @@
-import { ReactNode, useCallback, useEffect } from 'react'
+import { ReactNode, useCallback, useEffect, useState } from 'react'
 import cls from './Modal.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Portal } from '../Portal/Portal'
@@ -8,6 +8,7 @@ interface ModalProps {
   className?: string
   isOpen?: boolean
   onClose?: () => void
+  lazy?: boolean
 }
 
 export const Modal = ({
@@ -15,10 +16,18 @@ export const Modal = ({
   className,
   isOpen,
   onClose,
+  lazy,
 }: ModalProps): JSX.Element => {
+  const [isMounted, setIsMounted] = useState(false)
   const mods: Record<string, boolean> = {
     [cls.opened]: isOpen,
   }
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true)
+    }
+  }, [isOpen])
 
   const closeHandler = useCallback(() => {
     if (onClose) {
@@ -47,6 +56,13 @@ export const Modal = ({
       window.removeEventListener('keydown', onEscKeyDown)
     }
   }, [isOpen, onEscKeyDown])
+
+  console.log('lazy:', lazy)
+  console.log('isMounted:', isMounted)
+
+  if (lazy && !isMounted) {
+    return null
+  }
 
   return (
     <Portal>

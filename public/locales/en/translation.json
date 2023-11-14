@@ -7,6 +7,8 @@
   "Что-то пошло не так...": "Something went wrong..",
   "Перезагрузить страницу": "Reload page",
   "Имя пользователя": "username",
+  "логин": "username",
   "Пароль": "password",
+  "пароль": "password",
   "Авторизация": "SignIn"
 }

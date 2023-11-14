@@ -1,3 +1,50 @@
 .Input {
-  box-sizing: border-box;
+  display: flex;
+}
+
+.placeholder {
+  width: 30%;
+  display: flex;
+  justify-content: end;
+  margin-right: 5px;
+}
+
+.caretkaWrapper {
+  width: 70%;
+  display: flex;
+  justify-content: start;
+  position: relative;
+}
+
+.input {
+  background-color: var(--bg-inverted-color);
+  border: none;
+  outline: none;
+  caret-color: transparent;
+  color: var(--inverted-primary-color);
+  font: var(--font-m);
+}
+
+.caretka {
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  height: 3px;
+  width: 10px;
+  background-color: var(--inverted-primary-color);
+  animation: blink 0.8s forwards infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.01;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

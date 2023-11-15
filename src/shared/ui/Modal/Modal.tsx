@@ -2,6 +2,7 @@ import { ReactNode, useCallback, useEffect, useState } from 'react'
 import cls from './Modal.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Portal } from '../Portal/Portal'
+import { useTheme } from 'app/providers/ThemeProvider'
 
 interface ModalProps {
   children?: ReactNode
@@ -22,6 +23,7 @@ export const Modal = ({
   const mods: Record<string, boolean> = {
     [cls.opened]: isOpen,
   }
+  const { theme } = useTheme()
 
   useEffect(() => {
     if (isOpen) {
@@ -57,16 +59,13 @@ export const Modal = ({
     }
   }, [isOpen, onEscKeyDown])
 
-  console.log('lazy:', lazy)
-  console.log('isMounted:', isMounted)
-
   if (lazy && !isMounted) {
     return null
   }
 
   return (
     <Portal>
-      <div className={classNames(cls.modal, mods, [className])}>
+      <div className={classNames(cls.modal, mods, [className, theme])}>
         <div className={cls.mask} onClick={closeHandler}>
           <div className={cls.content} onClick={onContentClick}>
             {children}

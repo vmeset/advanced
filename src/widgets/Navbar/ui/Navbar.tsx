@@ -20,7 +20,11 @@ export const Navbar = ({ className }: NavbarProps): JSX.Element => {
   return (
     <div className={classNames(cls.navbar, {}, [className])}>
       <div className={cls.links}>
-        <Button theme={ButtonTheme.CLEAR} onClick={toggleModal}>
+        <Button
+          className={cls.authBtn}
+          theme={ButtonTheme.CLEAR}
+          onClick={toggleModal}
+        >
           {t('Войти')}
         </Button>
       </div>

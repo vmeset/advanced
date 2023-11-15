@@ -66,10 +66,7 @@ export const Input = memo(function Input(props: InputProps) {
 
   return (
     <div className={classNames(cls.Input, {}, [className])}>
-      <div className={cls.placeholder}>
-        {t(placeholder)}
-        {'>'}
-      </div>
+      <div className={cls.placeholder}>{t(placeholder)}:</div>
       <div className={cls.caretkaWrapper}>
         <input
           ref={ref}

@@ -6,8 +6,8 @@ import { Input } from 'shared/ui/Input/Input'
 import { useDispatch, useSelector } from 'react-redux'
 import { authActions } from '../../model/slice/authSlice'
 import { memo, useCallback } from 'react'
-import { getUsername } from '../../model/selectors/getUsername'
-import { getPassword } from '../../model/selectors/getPassword'
+import { getUsername } from '../../model/selectors/getUsername/getUsername'
+import { getPassword } from '../../model/selectors/getPassword/getPassword'
 
 interface LoginFormProps {
   className?: string

@@ -8,6 +8,9 @@ import { authActions } from '../../model/slice/authSlice'
 import { memo, useCallback } from 'react'
 import { getUsername } from '../../model/selectors/getUsername/getUsername'
 import { getPassword } from '../../model/selectors/getPassword/getPassword'
+import { authByUsername } from '../../model/services/authByUsername/authByUsername'
+import { getIsLoading } from '../../model/selectors/getIsLoading/getIsLoading'
+import { getError } from '../../model/selectors/getError/getError'
 
 interface LoginFormProps {
   className?: string
@@ -21,6 +24,8 @@ export const LoginForm = memo(function LoginForm({
   const dispatch = useDispatch()
   const username = useSelector(getUsername)
   const password = useSelector(getPassword)
+  const isLoading = useSelector(getIsLoading)
+  const authError = useSelector(getError)
 
   const handleUsernameChange = useCallback(
     (value: string) => {
@@ -36,7 +41,9 @@ export const LoginForm = memo(function LoginForm({
     [dispatch]
   )
 
-  const onLoginClick = useCallback(() => {}, [])
+  const onLoginClick = useCallback(() => {
+    dispatch(authByUsername({ username, password }))
+  }, [dispatch, password, username])
 
   return (
     <div className={classNames(cls.LoginForm, {}, [className])}>
@@ -55,9 +62,10 @@ export const LoginForm = memo(function LoginForm({
         handleInputChange={handlePasswordChange}
         value={password}
       />
+      <div>{authError}</div>
       <Button
         className={cls.btn}
-        theme={ButtonTheme.OUTLINE}
+        theme={isLoading ? ButtonTheme.DISABLED : ButtonTheme.OUTLINE}
         onClick={onLoginClick}
       >
         {t('Войти')}

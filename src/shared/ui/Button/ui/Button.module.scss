@@ -25,6 +25,12 @@
   background: none;
 }
 
+.disabled {
+  opacity: 0.6;
+  background: none;
+  color: var(--primary-color);
+}
+
 .background {
   background-color: var(--inverted-bg-color);
 }

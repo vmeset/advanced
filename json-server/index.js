@@ -11,8 +11,8 @@ server.use(jsonServer.bodyParser)
 
 // Нужно для небольшой задержки, чтобы запрос проходил не мгновенно, имитация реального апи
 server.use(async (req, res, next) => {
-  await new Promise((res) => {
-    setTimeout(res, 800)
+  await new Promise((resolve) => {
+    setTimeout(resolve, 800)
   })
   next()
 })
@@ -47,7 +47,6 @@ server.use((req, res, next) => {
   if (!req.headers.authorization) {
     return res.status(403).json({ message: 'AUTH ERROR' })
   }
-
   next()
 })
 

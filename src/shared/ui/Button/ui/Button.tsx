@@ -1,6 +1,6 @@
+import cls from './Button.module.scss'
 /* eslint-disable no-unused-vars */
 import { classNames } from 'shared/lib/classNames/classNames'
-import cls from './Button.module.scss'
 import { type ButtonHTMLAttributes } from 'react'
 
 export enum ButtonTheme {
@@ -9,6 +9,7 @@ export enum ButtonTheme {
   OUTLINE = 'outline',
   BACKGROUND = 'background',
   BACKGROUND_INVERTED = 'background_inverted',
+  DISABLED = 'disabled'
 }
 
 export enum ButtonSize {

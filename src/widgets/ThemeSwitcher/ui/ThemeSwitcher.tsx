@@ -2,14 +2,14 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { Theme, useTheme } from 'app/providers/ThemeProvider'
 import Light from 'shared/assets/icons/theme-light.svg'
 import Dark from 'shared/assets/icons/theme-dark.svg'
-import { Button, ButtonTheme } from 'shared/ui/Button'
+import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 
 interface ThemeSwitcherProps {
   className?: string
 }
 
 export const ThemeSwitcher = ({
-  className
+  className,
 }: ThemeSwitcherProps): JSX.Element => {
   const { theme, toggleTheme } = useTheme()
 

@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { Theme } from 'app/providers/ThemeProvider'
 import { Button, ButtonSize, ButtonTheme } from './Button'
-import { ThemeDecorator } from '../../../config/storybook/themeDecorator/ThemeDecorator'
+import { ThemeDecorator } from '../../config/storybook/themeDecorator/ThemeDecorator'
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {

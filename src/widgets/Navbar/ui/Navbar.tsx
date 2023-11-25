@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Navbar.module.scss'
 import { useTranslation } from 'react-i18next'
-import { Button, ButtonTheme } from '../../../shared/ui/Button'
+import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { useCallback, useState } from 'react'
 import { LoginModal } from 'features/authByUsername'
 

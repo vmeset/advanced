@@ -3,6 +3,7 @@
   flex-direction: column;
   text-align: center;
   width: 300px;
+  padding: 10px 0 5px;
 }
 
 .input {
@@ -14,4 +15,9 @@
 .btn {
   margin-top: 5px;
   margin-left: auto;
+}
+
+.formFooter {
+  display: flex;
+  align-items: center;
 }

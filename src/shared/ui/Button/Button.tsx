@@ -31,10 +31,14 @@ export const Button = ({
   size,
   ...otherProps
 }: ButtonProps): JSX.Element => {
+  const mods: Record<string, boolean> = {
+    [cls[theme]]: true,
+    [cls[size]]: true,
+  }
   return (
     <button
       data-testid="testBtn"
-      className={classNames(cls.button, {}, [className, cls[theme], cls[size]])}
+      className={classNames(cls.button, mods, [className])}
       {...otherProps}
     >
       {children}

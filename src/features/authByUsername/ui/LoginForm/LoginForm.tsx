@@ -11,6 +11,7 @@ import { authByUsername } from '../../model/services/authByUsername/authByUserna
 import { getIsLoading } from '../../model/selectors/getIsLoading/getIsLoading'
 import { getError } from '../../model/selectors/getError/getError'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
+import { Text, TextThemes } from 'shared/ui/Text/Text'
 
 interface LoginFormProps {
   className?: string
@@ -47,7 +48,7 @@ export const LoginForm = memo(function LoginForm({
 
   return (
     <div className={classNames(cls.LoginForm, {}, [className])}>
-      {t('Авторизация')}
+      <Text title={t('Авторизация')} />
       <Input
         type="text"
         className={cls.input}
@@ -62,14 +63,18 @@ export const LoginForm = memo(function LoginForm({
         handleInputChange={handlePasswordChange}
         value={password}
       />
-      <div>{authError}</div>
-      <Button
-        className={cls.btn}
-        theme={isLoading ? ButtonTheme.DISABLED : ButtonTheme.OUTLINE}
-        onClick={onLoginClick}
-      >
-        {t('Войти')}
-      </Button>
+      <div className={cls.formFooter}>
+        {authError && (
+          <Text text={t('Введены неверные данные!')} theme={TextThemes.ERROR} />
+        )}
+        <Button
+          className={cls.btn}
+          theme={isLoading ? ButtonTheme.DISABLED : ButtonTheme.OUTLINE}
+          onClick={onLoginClick}
+        >
+          {t('Войти')}
+        </Button>
+      </div>
     </div>
   )
 })

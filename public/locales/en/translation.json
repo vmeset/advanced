@@ -10,5 +10,6 @@
   "логин": "username",
   "Пароль": "password",
   "пароль": "password",
-  "Авторизация": "SignIn"
+  "Авторизация": "SignIn",
+  "Введены неверные данные!": "Invalid login or password"
 }

@@ -1,14 +1,15 @@
-import { ReactNode, useCallback, useEffect } from 'react'
+import { ReactNode, useCallback, useEffect, useState } from 'react'
 import cls from './Modal.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Portal } from '../Portal/Portal'
-import { useTheme } from '../../../app/providers/ThemeProvider'
+import { useTheme } from 'app/providers/ThemeProvider'
 
 interface ModalProps {
   children?: ReactNode
   className?: string
   isOpen?: boolean
   onClose?: () => void
+  lazy?: boolean
 }
 
 export const Modal = ({
@@ -16,12 +17,19 @@ export const Modal = ({
   className,
   isOpen,
   onClose,
+  lazy,
 }: ModalProps): JSX.Element => {
-  const { theme } = useTheme()
+  const [isMounted, setIsMounted] = useState(false)
   const mods: Record<string, boolean> = {
     [cls.opened]: isOpen,
-    [cls[theme]]: true,
   }
+  const { theme } = useTheme()
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true)
+    }
+  }, [isOpen])
 
   const closeHandler = useCallback(() => {
     if (onClose) {
@@ -51,9 +59,13 @@ export const Modal = ({
     }
   }, [isOpen, onEscKeyDown])
 
+  if (lazy && !isMounted) {
+    return null
+  }
+
   return (
     <Portal>
-      <div className={classNames(cls.modal, mods, [className])}>
+      <div className={classNames(cls.modal, mods, [className, theme])}>
         <div className={cls.mask} onClick={closeHandler}>
           <div className={cls.content} onClick={onContentClick}>
             {children}

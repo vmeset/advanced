@@ -3,7 +3,14 @@
   "О нас": "About",
   "язык": "english",
   "Войти": "Login",
+  "Выйти": "Logout",
   "короткая версия": "En",
   "Что-то пошло не так...": "Something went wrong..",
-  "Перезагрузить страницу": "Reload page"
+  "Перезагрузить страницу": "Reload page",
+  "Имя пользователя": "username",
+  "логин": "username",
+  "Пароль": "password",
+  "пароль": "password",
+  "Авторизация": "SignIn",
+  "Введены неверные данные!": "Invalid login or password"
 }

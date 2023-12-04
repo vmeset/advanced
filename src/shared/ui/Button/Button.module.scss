@@ -4,13 +4,13 @@
   cursor: pointer;
   color: var(--inverted-primary-color);
   box-sizing: border-box;
-  border: none;
+  border: 1px solid transparent;
+  outline: none;
   padding: 6px 15px;
 }
 
 .clear,
 .clear_inverted {
-  border: none;
   background: none;
   outline: none;
 }
@@ -25,14 +25,18 @@
   background: none;
 }
 
+.disabled {
+  opacity: 0.6;
+  background: none;
+  color: var(--primary-color);
+}
+
 .background {
   background-color: var(--inverted-bg-color);
 }
 
 .background_inverted {
   background-color: var(--inverted-bg-color);
-
-  // background-color: var(--bg-color);
 }
 
 .middle {

@@ -12,5 +12,16 @@
 }
 
 .links {
+  display: flex;
+  align-items: center;
   margin-left: auto;
+}
+
+.divider {
+  margin-left: 15px;
+  height: 20px;
+}
+
+.authBtn {
+  font: var(--font-m);
 }

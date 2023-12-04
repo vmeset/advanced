@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { Button } from 'shared/ui/Button'
+import { Button } from 'shared/ui/Button/Button'
 import cls from './PageError.module.scss'
 
 export const PageError = () => {
@@ -10,13 +10,9 @@ export const PageError = () => {
   }
   return (
     <div className={cls.pageError}>
+      <div>{t('Что-то пошло не так...')}</div>
       <div>
-        {t('Что-то пошло не так...')}
-      </div>
-      <div>
-        <Button onClick={reloadPage}>
-          {t('Перезагрузить страницу')}
-        </Button>
+        <Button onClick={reloadPage}>{t('Перезагрузить страницу')}</Button>
       </div>
     </div>
   )

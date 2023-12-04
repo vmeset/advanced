@@ -1,0 +1,23 @@
+.LoginForm {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 300px;
+  padding: 10px 0 5px;
+}
+
+.input {
+  margin-top: 5px;
+  padding: 5px;
+  width: 100%;
+}
+
+.btn {
+  margin-top: 5px;
+  margin-left: auto;
+}
+
+.formFooter {
+  display: flex;
+  align-items: center;
+}

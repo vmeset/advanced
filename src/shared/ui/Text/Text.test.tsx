@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import { Text, TextThemes } from './Text'
 
 describe('text tests', () => {
-  test('text render test', () => {
+  test('test Text render', () => {
     render(<Text title="Title" text="text" />)
     expect(screen.getByText('Title')).toBeInTheDocument()
   })

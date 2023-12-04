@@ -3,6 +3,7 @@ import { classNames } from 'shared/lib/classNames/classNames'
 
 export enum TextThemes {
   PRIMARY = 'primary',
+  INVERTED = 'inverted',
   ERROR = 'error',
 }
 
@@ -15,6 +16,8 @@ interface TextProps {
 
 export const Text = (props: TextProps) => {
   const { className, title, text, theme = TextThemes.PRIMARY } = props
+
+  console.log('theme:', theme)
   return (
     <div
       className={classNames(cls.Text, { [cls[theme]]: true }, [className])}

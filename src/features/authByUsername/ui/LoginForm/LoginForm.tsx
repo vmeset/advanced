@@ -42,7 +42,7 @@ export const LoginForm = memo(function LoginForm({
     [dispatch]
   )
 
-  const onLoginClick = useCallback(() => {
+  const handleLogin = useCallback(() => {
     dispatch(authByUsername({ username, password }))
   }, [dispatch, password, username])
 
@@ -70,7 +70,7 @@ export const LoginForm = memo(function LoginForm({
         <Button
           className={cls.btn}
           theme={isLoading ? ButtonTheme.DISABLED : ButtonTheme.OUTLINE}
-          onClick={onLoginClick}
+          onClick={handleLogin}
         >
           {t('Войти')}
         </Button>

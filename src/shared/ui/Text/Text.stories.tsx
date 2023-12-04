@@ -42,6 +42,21 @@ DarkError.args = {
 }
 DarkError.decorators = [ThemeDecorator(Theme.DARK)]
 
+export const PrimaryInverted = Template.bind({})
+PrimaryInverted.args = {
+  title: 'Title',
+  text: 'text',
+  theme: TextThemes.PRIMARY,
+}
+PrimaryInverted.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const DarkInverted = Template.bind({})
+DarkInverted.args = {
+  title: 'Title',
+  text: 'text',
+  theme: TextThemes.PRIMARY,
+}
+
 export const PrimaryOnlyTitle = Template.bind({})
 PrimaryOnlyTitle.args = {
   title: 'onlyTitle',

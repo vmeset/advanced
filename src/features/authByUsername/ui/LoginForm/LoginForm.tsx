@@ -13,13 +13,11 @@ import { getError } from '../../model/selectors/getError/getError'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { Text, TextThemes } from 'shared/ui/Text/Text'
 
-interface LoginFormProps {
+export interface LoginFormProps {
   className?: string
 }
 
-export const LoginForm = memo(function LoginForm({
-  className,
-}: LoginFormProps) {
+const LoginForm = memo(function LoginForm({ className }: LoginFormProps) {
   const { t } = useTranslation('translation')
 
   const dispatch = useDispatch()
@@ -78,3 +76,5 @@ export const LoginForm = memo(function LoginForm({
     </div>
   )
 })
+
+export default LoginForm

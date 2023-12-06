@@ -61,6 +61,7 @@ module.exports = {
     '@typescript-eslint/indent': 'off',
     '@typescript-eslint/no-dynamic-delete': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
+    indent: ['off', 2],
   },
   globals: {
     __IS_DEV__: true,

@@ -2,13 +2,13 @@
   "posts": [
     {
       "id": 1,
-      "title": "json-server",
+      "title": "admin message",
       "userId": 1
     },
     {
       "id": 2,
-      "title": "json-server",
-      "userId": 2
+      "title": "AK post",
+      "userId": 47
     }
   ],
   "comments": [
@@ -23,6 +23,11 @@
       "id": 1,
       "username": "admin",
       "password": "123"
+    },
+    {
+      "id": 47,
+      "username": "AK",
+      "password": "47"
     }
   ],
   "profile": { "name": "typicode" }

@@ -11,4 +11,8 @@ describe('getIsLoading selector', () => {
     }
     expect(getIsLoading(stateMock as StateSchema)).toBe(true)
   })
+  test('default isLoading case', () => {
+    const stateMock: DeepPartial<StateSchema> = {}
+    expect(getIsLoading(stateMock as StateSchema)).toBe(false)
+  })
 })

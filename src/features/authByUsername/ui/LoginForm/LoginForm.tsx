@@ -1,6 +1,6 @@
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { Input } from 'shared/ui/Input/Input'
@@ -16,6 +16,7 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 
 export interface LoginFormProps {
   className?: string
@@ -28,7 +29,7 @@ const initialReducers: ReducersList = {
 const LoginForm = memo(function LoginForm({ className }: LoginFormProps) {
   const { t } = useTranslation('translation')
 
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const username = useSelector(getUsername)
   const password = useSelector(getPassword)
   const isLoading = useSelector(getIsLoading)
@@ -48,12 +49,13 @@ const LoginForm = memo(function LoginForm({ className }: LoginFormProps) {
     [dispatch]
   )
 
-  const handleLogin = useCallback(() => {
-    dispatch(authByUsername({ username, password }))
+  const handleLogin = useCallback(async () => {
+    const result = await dispatch(authByUsername({ username, password }))
+    console.log('result:', result)
   }, [dispatch, password, username])
 
   return (
-    <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
+    <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount={true}>
       <div className={classNames(cls.LoginForm, {}, [className])}>
         <Text title={t('Авторизация')} />
         <Input

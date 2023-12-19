@@ -4,9 +4,10 @@ import { useTranslation } from 'react-i18next'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { useCallback, useState } from 'react'
 import { LoginModal } from 'features/authByUsername'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { getUserAuthData, userActions } from 'entities/user'
 import { Text, TextThemes } from 'shared/ui/Text/Text'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 
 interface NavbarProps {
   className?: string
@@ -14,7 +15,7 @@ interface NavbarProps {
 
 export const Navbar = ({ className }: NavbarProps): JSX.Element => {
   const { t } = useTranslation('translation')
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const [isAuthOpen, setIsAuthOpen] = useState(false)
   const authData = useSelector(getUserAuthData)
 
@@ -40,7 +41,8 @@ export const Navbar = ({ className }: NavbarProps): JSX.Element => {
             {t('Выйти')}
           </Button>
         </div>
-        {isAuthOpen && <LoginModal isOpen={isAuthOpen} onClose={toggleModal} />}
+        <LoginModal isOpen={isAuthOpen} onClose={toggleModal} />
+        {/* {isAuthOpen && <LoginModal isOpen={isAuthOpen} onClose={toggleModal} />} */}
       </div>
     )
   }

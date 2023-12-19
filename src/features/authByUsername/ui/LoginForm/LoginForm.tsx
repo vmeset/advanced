@@ -20,13 +20,17 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 
 export interface LoginFormProps {
   className?: string
+  onSuccess: () => void
 }
 
 const initialReducers: ReducersList = {
   auth: authReducer,
 }
 
-const LoginForm = memo(function LoginForm({ className }: LoginFormProps) {
+const LoginForm = memo(function LoginForm({
+  className,
+  onSuccess,
+}: LoginFormProps) {
   const { t } = useTranslation('translation')
 
   const dispatch = useAppDispatch()
@@ -51,8 +55,10 @@ const LoginForm = memo(function LoginForm({ className }: LoginFormProps) {
 
   const handleLogin = useCallback(async () => {
     const result = await dispatch(authByUsername({ username, password }))
-    console.log('result:', result)
-  }, [dispatch, password, username])
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess()
+    }
+  }, [dispatch, onSuccess, password, username])
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount={true}>

@@ -42,7 +42,6 @@ export const Navbar = ({ className }: NavbarProps): JSX.Element => {
           </Button>
         </div>
         <LoginModal isOpen={isAuthOpen} onClose={toggleModal} />
-        {/* {isAuthOpen && <LoginModal isOpen={isAuthOpen} onClose={toggleModal} />} */}
       </div>
     )
   }

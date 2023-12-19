@@ -9,6 +9,7 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { useTranslation } from 'react-i18next'
 import HomeIcon from 'shared/assets/icons/main-page.svg'
 import AboutIcon from 'shared/assets/icons/about-page.svg'
+import ProfileIcon from 'shared/assets/icons/profile-page.svg'
 
 interface SidebarProps {
   className?: string
@@ -54,6 +55,14 @@ export const Sidebar = ({ className }: SidebarProps): JSX.Element => {
         >
           <AboutIcon className={cls.icon} />
           <span className={cls.link}>{t('О нас')}</span>
+        </AppLink>
+        <AppLink
+          className={cls.item}
+          theme={AppLinkTheme.PRIMARY_INVERTED}
+          to={RoutePath.profile}
+        >
+          <ProfileIcon className={cls.icon} />
+          <span className={cls.link}>{t('Профиль')}</span>
         </AppLink>
       </div>
 

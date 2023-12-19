@@ -17,7 +17,6 @@ interface TextProps {
 export const Text = (props: TextProps) => {
   const { className, title, text, theme = TextThemes.PRIMARY } = props
 
-  console.log('theme:', theme)
   return (
     <div
       className={classNames(cls.Text, { [cls[theme]]: true }, [className])}

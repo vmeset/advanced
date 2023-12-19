@@ -12,5 +12,7 @@
   "Пароль": "password",
   "пароль": "password",
   "Авторизация": "SignIn",
-  "Введены неверные данные!": "Invalid login or password"
+  "Введены неверные данные!": "Invalid login or password",
+  "Страница профиля": "Profile page",
+  "Профиль": "Profile"
 }

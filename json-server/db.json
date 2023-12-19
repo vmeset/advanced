@@ -30,5 +30,14 @@
       "password": "47"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Alexander",
+    "lastname": "V",
+    "age": 33,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Maykop",
+    "username": "vmeset",
+    "avatar": "https://avatars.githubusercontent.com/u/23459570?s=400&u=fa890adb05b361f0ffa88c7692fedbcf2276b08c&v=4"
+  }
 }

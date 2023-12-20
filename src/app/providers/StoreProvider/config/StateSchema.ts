@@ -8,6 +8,7 @@ import {
   Reducer,
   ReducersMapObject,
 } from '@reduxjs/toolkit'
+import { ProfileSchema } from 'entities/profile'
 
 export interface StateSchema {
   // async static
@@ -16,6 +17,7 @@ export interface StateSchema {
 
   // async Reducers
   auth?: AuthSchema
+  profile?: ProfileSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

@@ -2,23 +2,18 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { Theme } from 'app/providers/ThemeProvider'
 import { ThemeDecorator } from '../../../shared/config/storybook/themeDecorator/ThemeDecorator'
-import About from './About'
+import Profile from './Profile'
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {
-  title: 'pages/About',
-  component: About,
+  title: 'pages/Profile',
+  component: Profile,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  args: {
-    to: '/',
-  },
-} as ComponentMeta<typeof About>
+} as ComponentMeta<typeof Profile>
 
-const Template: ComponentStory<typeof About> = (args: object) => (
-  <About {...args} />
-)
+const Template: ComponentStory<typeof Profile> = (args) => <Profile {...args} />
 
 export const LightTheme = Template.bind({})
 LightTheme.args = {}

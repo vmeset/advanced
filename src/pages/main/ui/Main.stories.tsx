@@ -20,9 +20,9 @@ const Template: ComponentStory<typeof Main> = (args: object) => (
   <Main {...(args ?? {})} />
 )
 
-export const Light = Template.bind({})
-Light.args = {}
+export const LightTheme = Template.bind({})
+LightTheme.args = {}
 
-export const Dark = Template.bind({})
-Dark.args = {}
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+export const DarkTheme = Template.bind({})
+DarkTheme.args = {}
+DarkTheme.decorators = [ThemeDecorator(Theme.DARK)]

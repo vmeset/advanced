@@ -2,10 +2,12 @@
 import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit'
 import { Story } from '@storybook/react'
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider'
+import { profileReducer } from 'entities/profile'
 import { authReducer } from 'features/authByUsername/model/slice/authSlice'
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
   auth: authReducer,
+  profile: profileReducer,
 }
 
 export const StoreDecorator =

@@ -14,12 +14,10 @@ export default {
   },
 } as ComponentMeta<typeof Profile>
 
-const Template: ComponentStory<typeof Profile> = (args) => <Profile {...args} />
+const Template: ComponentStory<typeof Profile> = () => <Profile />
 
 export const LightTheme = Template.bind({})
-LightTheme.args = {}
 LightTheme.decorators = [StoreDecorator({})]
 
 export const DarkTheme = Template.bind({})
-DarkTheme.args = {}
 DarkTheme.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})]

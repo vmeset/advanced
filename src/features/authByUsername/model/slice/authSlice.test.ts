@@ -1,4 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit'
 import { AuthSchema } from '../types/authSchema'
 import { authActions, authReducer } from './authSlice'
 

@@ -4,7 +4,7 @@ import { ThunkConfig } from 'app/providers/StoreProvider'
 
 export const fetchProfileData = createAsyncThunk<
   IProfile,
-  void,
+  never,
   ThunkConfig<string>
 >('profile/fetchProfileData', async (_, thunkAPI) => {
   const { extra, rejectWithValue } = thunkAPI

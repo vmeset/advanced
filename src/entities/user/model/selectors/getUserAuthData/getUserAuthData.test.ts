@@ -1,4 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit'
 import { getUserAuthData } from './getUserAuthData'
 import { StateSchema } from 'app/providers/StoreProvider'
 

@@ -21,18 +21,18 @@ const profileSlice = createSlice({
     builder.addCase(fetchProfileData.pending, (state) => {
       state.error = ''
       state.isLoading = true
-    }),
-      builder.addCase(
-        fetchProfileData.fulfilled,
-        (state, action: PayloadAction<IProfile>) => {
-          state.data = action.payload
-          state.isLoading = false
-        }
-      ),
-      builder.addCase(fetchProfileData.rejected, (state, action) => {
-        state.error = action.payload
+    })
+    builder.addCase(
+      fetchProfileData.fulfilled,
+      (state, action: PayloadAction<IProfile>) => {
+        state.data = action.payload
         state.isLoading = false
-      })
+      }
+    )
+    builder.addCase(fetchProfileData.rejected, (state, action) => {
+      state.error = action.payload
+      state.isLoading = false
+    })
   },
 })
 

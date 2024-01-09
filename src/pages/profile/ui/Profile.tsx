@@ -9,15 +9,11 @@ import {
 import { ProfileCard, fetchProfileData, profileReducer } from 'entities/profile'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 
-interface ProfileProps {
-  className?: string
-}
-
 const initialReducers: ReducersList = {
   profile: profileReducer,
 }
 
-const Profile = memo(function Profile({ className }: ProfileProps) {
+const Profile = memo(function Profile() {
   const { t } = useTranslation('profile')
   const dispatch = useAppDispatch()
 
@@ -27,7 +23,7 @@ const Profile = memo(function Profile({ className }: ProfileProps) {
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
-      <div className={classNames(cls.Profile, {}, [className])}>
+      <div className={classNames(cls.Profile, {}, [])}>
         {t('Страница профиля')}
         <ProfileCard />
       </div>

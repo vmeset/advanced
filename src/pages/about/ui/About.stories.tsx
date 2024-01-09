@@ -16,13 +16,9 @@ export default {
   },
 } as ComponentMeta<typeof About>
 
-const Template: ComponentStory<typeof About> = (args: object) => (
-  <About {...args} />
-)
+const Template: ComponentStory<typeof About> = () => <About />
 
 export const LightTheme = Template.bind({})
-LightTheme.args = {}
 
 export const DarkTheme = Template.bind({})
-DarkTheme.args = {}
 DarkTheme.decorators = [ThemeDecorator(Theme.DARK)]

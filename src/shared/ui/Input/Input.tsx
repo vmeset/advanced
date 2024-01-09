@@ -19,7 +19,7 @@ interface InputProps extends HTMLInputProps {
   value?: string
   handleInputChange?: (value: string) => void
   type?: string
-  placeholder: string
+  placeholder?: string
   autofocus?: boolean
 }
 

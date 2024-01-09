@@ -1,5 +1,9 @@
-import { StateSchema, ReduxStoreWithManager } from './config/StateSchema'
-import { AppDispatch, createReduxStore } from './config/store'
-import { StoreProvider } from './ui/StoreProvider'
+import axios from 'axios'
+import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage'
 
-export { StoreProvider, createReduxStore, type StateSchema, type ReduxStoreWithManager, type AppDispatch }
+export const $api = axios.create({
+  baseURL: __API__,
+  headers: {
+    authorization: localStorage.getItem(USER_LOCALSTORAGE_KEY) || '',
+  },
+})

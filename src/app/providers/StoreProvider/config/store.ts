@@ -1,7 +1,8 @@
 import { ReducersMapObject, configureStore } from '@reduxjs/toolkit'
-import { StateSchema } from './StateSchema'
 import { counterReducer } from 'entities/counter'
 import { userReducer } from 'entities/user'
+import { $api } from 'shared/api/api'
+import { StateSchema } from './StateSchema'
 import { createReducerManager } from './reducerManager'
 
 export function createReduxStore(
@@ -16,10 +17,18 @@ export function createReduxStore(
 
   const reducerManager = createReducerManager(rootReducers)
 
-  const store = configureStore<StateSchema>({
+  const store = configureStore({
     reducer: reducerManager.reduce,
     devTools: __IS_DEV__,
     preloadedState: initialState,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        thunk: {
+          extraArgument: {
+            api: $api,
+          },
+        },
+      }),
   })
 
   // @ts-expect-error

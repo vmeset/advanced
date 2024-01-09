@@ -1,3 +1,4 @@
+import { $api } from 'shared/api/api';
 import type webpack from 'webpack'
 import { buildWebpackConfig } from './config/build/buildWebpackConfig'
 import { type BuildEnv, type BuildPaths } from './config/build/types/config'
@@ -14,12 +15,14 @@ export default (env: BuildEnv) => {
   const mode = env.mode || 'development'
   const isDev = mode === 'development'
   const PORT = env.port || 3000
+  const apiUrl = env.apiUrl || 'http://localhost:5005'
 
   const config: webpack.Configuration = buildWebpackConfig({
     mode,
     paths,
     isDev,
-    port: PORT
+    port: PORT,
+    apiUrl
   })
 
   return config

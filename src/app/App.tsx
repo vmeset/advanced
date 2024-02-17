@@ -15,6 +15,8 @@ function App(): JSX.Element {
     dispatch(userActions.initAuthData())
   }, [dispatch])
 
+  console.log('test')
+
   return (
     <div className={classNames('app', {}, [theme])}>
       <Suspense fallback="">

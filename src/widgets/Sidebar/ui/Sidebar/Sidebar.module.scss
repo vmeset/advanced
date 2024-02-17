@@ -17,13 +17,6 @@
     gap: 10px;
     flex-direction: column;
     font: var(--font-m);
-
-    .item {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      min-height: 30px;
-    }
   }
 
   .switchers {
@@ -51,8 +44,4 @@
     transition: 0.2s opacity;
     width: 0;
   }
-}
-
-.icon {
-  fill: var(--inverted-primary-color);
 }

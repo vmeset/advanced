@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { memo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Modal } from 'shared/ui/Modal/Modal'
 
-function Main() {
+const Main = memo(function Main() {
   const { t } = useTranslation('main')
   const [isOpen, setIsOpen] = useState(false)
 
@@ -27,6 +27,6 @@ function Main() {
       </Modal>
     </div>
   )
-}
+})
 
 export default Main

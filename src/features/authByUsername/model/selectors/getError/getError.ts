@@ -1,4 +1,3 @@
-import { createSelector } from '@reduxjs/toolkit'
-import { getAuthState } from '../getAuthState/getAuthState'
+import { StateSchema } from 'app/providers/StoreProvider'
 
-export const getError = createSelector(getAuthState, (state) => state.error)
+export const getError = (state: StateSchema) => state?.auth?.error

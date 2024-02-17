@@ -1,6 +1,6 @@
 import { ReactNode, useCallback, useEffect, useState } from 'react'
 import cls from './Modal.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { Mods, classNames } from 'shared/lib/classNames/classNames'
 import { Portal } from '../Portal/Portal'
 import { useTheme } from 'app/providers/ThemeProvider'
 
@@ -20,7 +20,7 @@ export const Modal = ({
   lazy,
 }: ModalProps): JSX.Element => {
   const [isMounted, setIsMounted] = useState(false)
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cls.opened]: isOpen,
   }
   const { theme } = useTheme()

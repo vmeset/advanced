@@ -1,4 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit'
 import { StateSchema } from 'app/providers/StoreProvider'
 import { getPassword } from './getPassword'
 
@@ -10,5 +9,9 @@ describe('getPassword selector', () => {
       },
     }
     expect(getPassword(stateMock as StateSchema)).toBe('12345678')
+  })
+  test('get default empty string for password from auth state', () => {
+    const stateMock: DeepPartial<StateSchema> = {}
+    expect(getPassword(stateMock as StateSchema)).toBe('')
   })
 })

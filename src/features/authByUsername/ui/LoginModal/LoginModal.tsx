@@ -1,15 +1,19 @@
 import { Modal } from 'shared/ui/Modal/Modal'
-import { LoginForm } from '../LoginForm/LoginForm'
+import { LoginFormAsync } from '../LoginForm/LoginForm.async'
+import { Suspense } from 'react'
+import { PageLoader } from 'widgets/PageLoader'
 
 interface LoginModalProps {
-  isOpen?: boolean
-  onClose?: () => void
+  isOpen: boolean
+  onClose: () => void
 }
 
 export const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose} lazy>
-      <LoginForm />
+      <Suspense fallback={<PageLoader />}>
+        <LoginFormAsync onSuccess={onClose} />
+      </Suspense>
     </Modal>
   )
 }

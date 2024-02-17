@@ -2,13 +2,13 @@
   "posts": [
     {
       "id": 1,
-      "title": "json-server",
+      "title": "admin message",
       "userId": 1
     },
     {
       "id": 2,
-      "title": "json-server",
-      "userId": 2
+      "title": "AK post",
+      "userId": 47
     }
   ],
   "comments": [
@@ -23,7 +23,21 @@
       "id": 1,
       "username": "admin",
       "password": "123"
+    },
+    {
+      "id": 47,
+      "username": "AK",
+      "password": "47"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Alexander",
+    "lastname": "V",
+    "age": 33,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Maykop",
+    "username": "vmeset",
+    "avatar": "https://avatars.githubusercontent.com/u/23459570?s=400&u=fa890adb05b361f0ffa88c7692fedbcf2276b08c&v=4"
+  }
 }

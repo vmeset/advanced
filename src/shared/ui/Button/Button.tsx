@@ -1,7 +1,7 @@
 import cls from './Button.module.scss'
 /* eslint-disable no-unused-vars */
-import { classNames } from 'shared/lib/classNames/classNames'
-import { type ButtonHTMLAttributes } from 'react'
+import { Mods, classNames } from 'shared/lib/classNames/classNames'
+import { memo, type ButtonHTMLAttributes } from 'react'
 
 export enum ButtonTheme {
   CLEAR = 'clear',
@@ -24,14 +24,14 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize
 }
 
-export const Button = ({
+export const Button = memo(function Button({
   className,
   children,
   theme,
   size,
   ...otherProps
-}: ButtonProps): JSX.Element => {
-  const mods: Record<string, boolean> = {
+}: ButtonProps): JSX.Element {
+  const mods: Mods = {
     [cls[theme]]: true,
     [cls[size]]: true,
   }
@@ -44,4 +44,4 @@ export const Button = ({
       {children}
     </button>
   )
-}
+})

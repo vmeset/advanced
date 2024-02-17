@@ -1,8 +1,3 @@
-import { createSelector } from '@reduxjs/toolkit'
-import { getAuthState } from '../getAuthState/getAuthState'
-import { AuthSchema } from '../../types/authSchema'
+import { StateSchema } from 'app/providers/StoreProvider'
 
-export const getUsername = createSelector(
-  getAuthState,
-  (auth: AuthSchema) => auth.username
-)
+export const getUsername = (state: StateSchema) => state?.auth?.username || ''
